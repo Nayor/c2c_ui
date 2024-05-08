@@ -63,6 +63,15 @@
         :options-filter="filterAccessWaypoints"
         :cards-filter="filterEndingWaypoints"
       />
+      <div>
+        <label class="label">{{ $gettext('public_transportation_rating') }}</label>
+        <template v-if="document && document.public_transportation_rating">
+          {{
+            $gettext(document.public_transportation_rating, fields.public_transportation_rating.i18nContext)
+              | uppercaseFirstLetter
+          }}
+        </template>
+      </div>
     </form-section>
 
     <form-section
@@ -194,6 +203,9 @@
 <script>
 import documentEditionViewMixin from './utils/document-edition-view-mixin';
 
+import common from '@/js/constants/common.json';
+const public_transportation_ratings = common.attributes.public_transportation_ratings;
+
 export default {
   mixins: [documentEditionViewMixin],
 
@@ -242,6 +254,7 @@ export default {
           this.document.starting_waypoints = waypoints.filter((waypoint) => waypoint.waypoint_type === 'access');
         }
       }
+      this.updatePublicTransportationRating();
     },
 
     beforeSave() {
@@ -287,6 +300,33 @@ export default {
       this.document.ending_waypoints = this.document.ending_waypoints.filter((waypoint) =>
         this.$documentUtils.isInArray(waypoints, waypoint)
       );
+
+      this.updatePublicTransportationRating();
+    },
+
+    // for each category (starts and ends) take best rating, and keep the worst of the two values
+    // if no waypoint is provided, assume default service (unknown)
+    updatePublicTransportationRating() {
+      const default_rating = this.fields.public_transportation_rating.default;
+      const starts_rating = this.document.starting_waypoints
+        .map((w) => w.public_transportation_rating)
+        .reduce(this.bestPTRatings, default_rating);
+      const ends_rating = this.document.ending_waypoints
+        .map((w) => w.public_transportation_rating)
+        .reduce(this.bestPTRatings, default_rating);
+
+      let estimated_rating;
+      if (this.fields.ending_waypoints.isVisibleFor(this.document)) {
+        estimated_rating = [starts_rating, ends_rating].reduceRight(bestPTRatings);
+      } else {
+        estimated_rating = starts_rating;
+      }
+
+      this.document.public_transportation_rating = estimated_rating;
+    },
+
+    bestPTRatings(ptr1, ptr2) {
+      return public_transportation_ratings.indexOf(ptr1) > public_transportation_ratings.indexOf(ptr2) ? ptr1 : ptr2;
     },
 
     handleRockFreeRating(climbingType) {

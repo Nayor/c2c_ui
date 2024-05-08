@@ -916,6 +916,12 @@
     "traverse": {
       "route_types": "trabesia"
     },
+    "unknown": {
+      "tracking": "ezezaguna"
+    },
+    "unknown service": {
+      "public_transportation_ratings": "zerbitzu ezezaguna"
+    },
     "url": "URL",
     "vertical": {
       "climbing_styles": "bertikala"

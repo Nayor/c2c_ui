@@ -1892,6 +1892,9 @@
     "unknown": {
       "tracking": "未知"
     },
+    "unknown service": {
+      "public_transportation_ratings": "未知服务"
+    },
     "unsufficient-scopes": {
       "tracking": "范围不足"
     },

@@ -1493,6 +1493,12 @@
     "traverse": {
       "route_types": "cruce"
     },
+    "unknown": {
+      "tracking": "desconocido"
+    },
+    "unknown service": {
+      "public_transportation_ratings": "servicio desconocido"
+    },
     "users": "usuarios",
     "very_dangerous": {
       "children_proof_types": "peligroso"

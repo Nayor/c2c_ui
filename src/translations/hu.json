@@ -1634,6 +1634,12 @@
     "traverse": {
       "route_types": "áthalad"
     },
+    "unknown": {
+      "tracking": "ismeretlen"
+    },
+    "unknown service": {
+      "public_transportation_ratings": "ismeretlen szolgáltatás"
+    },
     "users": "felhasználók",
     "vertical": {
       "climbing_styles": "függőleges"

@@ -419,11 +419,12 @@
     <span v-translate translate-context="product_types">bar</span>
     <span v-translate translate-context="product_types">sport_shop</span>
     <!-- public_transportation_ratings -->
-    <span v-translate translate-context="public_transportation_ratings">good service</span>
-    <span v-translate translate-context="public_transportation_ratings">seasonal service</span>
-    <span v-translate translate-context="public_transportation_ratings">poor service</span>
-    <span v-translate translate-context="public_transportation_ratings">nearby service</span>
     <span v-translate translate-context="public_transportation_ratings">no service</span>
+    <span v-translate translate-context="public_transportation_ratings">unknown</span>
+    <span v-translate translate-context="public_transportation_ratings">nearby service</span>
+    <span v-translate translate-context="public_transportation_ratings">poor service</span>
+    <span v-translate translate-context="public_transportation_ratings">seasonal service</span>
+    <span v-translate translate-context="public_transportation_ratings">good service</span>
     <!-- public_transportation_types -->
     <span v-translate translate-context="public_transportation_types">train</span>
     <span v-translate translate-context="public_transportation_types">bus</span>

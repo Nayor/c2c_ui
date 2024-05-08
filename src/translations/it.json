@@ -1832,7 +1832,10 @@
       "route_types": "traversata"
     },
     "unknown": {
-      "tracking": "Sconosciuto"
+      "tracking": "sconosciuto"
+    },
+    "unknown service": {
+      "public_transportation_ratings": "servizio sconosciuto"
     },
     "unsufficient-scopes": {
       "tracking": "Autorizzazioni insufficienti"

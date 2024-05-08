@@ -1771,6 +1771,9 @@
     "unknown": {
       "tracking": "Inconnu"
     },
+    "unknown service": {
+      "public_transportation_ratings": "service inconnu"
+    },
     "unsufficient-scopes": {
       "tracking": "Autorisations insuffisantes"
     },

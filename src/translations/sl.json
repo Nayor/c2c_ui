@@ -1883,7 +1883,10 @@
       "route_types": "prečenje"
     },
     "unknown": {
-      "tracking": "Neznano"
+      "tracking": "neznano"
+    },
+    "unknown service": {
+      "public_transportation_ratings": "neznana storitev"
     },
     "unsufficient-scopes": {
       "tracking": "Nezadostna dovoljenja"

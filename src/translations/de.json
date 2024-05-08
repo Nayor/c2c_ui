@@ -1966,6 +1966,9 @@
     "unknown": {
       "tracking": "Unbekannt"
     },
+    "unknown service": {
+      "public_transportation_ratings": "Unbekannt Verkehr"
+    },
     "unsufficient-scopes": {
       "tracking": "Unzureichende Berechtigungen"
     },

@@ -379,7 +379,7 @@ export default function install(Vue) {
       hasSoftMobility(document) {
         return (
           document.public_transportation_rating &&
-          common.attributes.public_transportation_ratings.indexOf(document.public_transportation_rating) < 4
+          common.attributes.public_transportation_ratings.indexOf(document.public_transportation_rating) > 1
         );
       },
 
