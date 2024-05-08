@@ -343,6 +343,7 @@
     "empty": {
       "quality_types": "hutsa"
     },
+    "ending waypoints": "iristeko puntuak",
     "en": {
       "langs": "ingelesa"
     },
@@ -874,6 +875,7 @@
     "stories": {
       "article_categories": "kontakizuna"
     },
+    "starting waypoints": "abia puntuak",
     "strava": "Strava",
     "summary": "laburpena",
     "summit": {

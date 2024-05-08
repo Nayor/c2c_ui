@@ -306,6 +306,18 @@ Field.prototype.isVisibleForWaypointTypes = function (waypointTypes) {
   return utils.intersectionIsNotNull(this.waypoint_types, waypointTypes);
 };
 
+Field.prototype.isVisibleForRouteType = function (routeTypes) {
+  if (!this.route_types) {
+    return true;
+  }
+
+  if (!routeTypes) {
+    return false;
+  }
+
+  return utils.intersectionIsNotNull(this.route_types, routeTypes);
+};
+
 Field.prototype.isVisibleFor = function (document) {
   if (!this.extraIsVisibleFor(document)) {
     return false;
@@ -316,6 +328,10 @@ Field.prototype.isVisibleFor = function (document) {
   }
 
   if (!this.isVisibleForWaypointType(document.waypoint_type)) {
+    return false;
+  }
+
+  if (document.type === 'r' && !this.isVisibleForRouteType(document.route_types)) {
     return false;
   }
 

@@ -174,7 +174,7 @@
     "Danger rating - very high": "Danger très fort",
     "Danger:": "Danger :",
     "Dashboard": "Tableau de bord",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Données techniques, comme l'orientation, le type de roche ou la configuration générale de l'itinéraire (arête, pilier...)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Données techniques, comme l'orientation, le type de roche, le type de route (aller-retour, boucle), les points de passage ou la configuration générale de l'itinéraire (arête, pilier...)",
     "Delete": {
       "yeti": "Supprimer"
     },
@@ -257,7 +257,7 @@
     "Extent": "Couverture",
     "FAQ?": "FAQ ?",
     "Fauna protection areas": "Faune",
-    "Fauna protection site:": "Site de protection de la faune :",
+    "Fauna protection site:": "Site de protection de la faune :",
     "Feel free to edit it.": "Éditez-le.",
     "Filter on map extent": "Limiter la recherche à la carte visible",
     "Filter results": "Filtrer",
@@ -1033,6 +1033,7 @@
       "quality_types": "vide"
     },
     "empty comment": "commentaire vide",
+    "ending waypoints": "points d'arrivée",
     "en": {
       "langs": "anglais"
     },
@@ -1293,6 +1294,7 @@
       "route_types": "boucle (approche ou refuge)"
     },
     "main_waypoint_id": "ID du point de passage principal",
+    "main_waypoint": "Point de passage principal",
     "male": {
       "genders": "homme"
     },
@@ -1718,6 +1720,7 @@
     "stone_ice_fall": {
       "event_types": "chute de pierre/glace/serac"
     },
+    "starting waypoints": "points de départ",
     "stories": {
       "article_categories": "récits"
     },

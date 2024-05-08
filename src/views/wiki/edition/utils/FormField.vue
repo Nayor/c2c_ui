@@ -22,6 +22,7 @@
         :min="min"
         :divisor="divisor"
         :is-expanded="isExpanded"
+        :prefix="prefix"
       />
     </div>
   </div>
@@ -79,6 +80,10 @@ export default {
     min: {
       type: String,
       default: undefined,
+    },
+    prefix: {
+      type: String,
+      default: null,
     },
   },
 

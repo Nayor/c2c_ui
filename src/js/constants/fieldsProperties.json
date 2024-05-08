@@ -284,6 +284,11 @@
     "unit": "m",
     "helper": "1063027#elevation-up_snow"
   },
+  "ending_waypoints": {
+    "type": "document",
+    "documentType": "waypoint",
+    "multiple": true
+  },
   "engagement_rating": {
     "values": "engagement_ratings",
     "queryMode": "valuesRangeSlider",
@@ -541,7 +546,9 @@
   "lift_status": {
     "values": "lift_status"
   },
-  "main_waypoint_id": {
+  "main_waypoint": {
+    "type": "document",
+    "documentType": "waypoint",
     "helper": "1063045#main-waypoint"
   },
   "maps_info": {
@@ -880,6 +887,11 @@
     "i18n": false,
     "helper": "239491#snowshoe-rating",
     "sortable": true
+  },
+  "starting_waypoints": {
+    "type": "document",
+    "documentType": "waypoint",
+    "multiple": true
   },
   "summary": {
     "type": "markdown",

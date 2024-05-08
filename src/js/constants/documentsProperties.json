@@ -342,6 +342,12 @@
         }
       },
       {
+        "id": "ending_waypoints",
+        "properties": {
+          "route_types": ["loop", "loop_hut", "traverse", "raid", "expedition"]
+        }
+      },
+      {
         "id": "engagement_rating",
         "properties": {
           "url": "erat",
@@ -455,6 +461,7 @@
       { "id": "labande_ski_rating", "properties": { "url": "srat", "activities": ["skitouring"] } },
       { "id": "lift_access" },
       { "id": "main_waypoint_id" },
+      { "id": "main_waypoint" },
       { "id": "mixed_rating", "properties": { "url": "mrat", "activities": ["snow_ice_mixed", "ice_climbing"] } },
       { "id": "mtb_down_rating", "properties": { "url": "mbdr", "activities": ["mountain_biking"] } },
       { "id": "mtb_height_diff_portages", "properties": { "url": "mbpush", "activities": ["mountain_biking"] } },
@@ -501,6 +508,7 @@
         }
       },
       { "id": "route_types", "properties": { "url": "rtyp" } },
+      { "id": "starting_waypoints" },
       { "id": "ski_exposition", "properties": { "url": "sexpo", "activities": ["skitouring"] } },
       { "id": "ski_rating", "properties": { "url": "trat", "activities": ["skitouring"] } },
       { "id": "slackline_height", "properties": { "activities": ["slacklining"] } },

@@ -159,7 +159,7 @@
     "Danger rating - moderate": "Clasificación de peligro: moderado",
     "Danger rating - very high": "Clasificación de peligro: muy alto",
     "Danger:": "Peligro :",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Datos técnicos, tal como orientación, tipo de roca, o la configuración general del itinerario (arista, pilar...)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Datos técnicos, tal como orientación, tipo de roca, puntos de ruta o la configuración general del itinerario (arista, pilar...)",
     "Delete": {
       "yeti": "Eliminar"
     },
@@ -815,6 +815,7 @@
       "quality_types": "vacío"
     },
     "empty comment": "comentario vacío",
+    "ending waypoints": "puntos de llegada",
     "en": {
       "langs": "inglés"
     },
@@ -1074,6 +1075,7 @@
       "book_types": "revista"
     },
     "main_waypoint_id": "ID del punto de ruta principal",
+    "main_waypoint": "Punto de ruta principal",
     "male": {
       "genders": "varón"
     },
@@ -1460,6 +1462,7 @@
     "stories": {
       "article_categories": "historias"
     },
+    "starting waypoints": "puntos de salida",
     "strava": "Strava",
     "summary": "Resumen",
     "summit": {

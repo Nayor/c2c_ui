@@ -229,7 +229,7 @@
     "Danger rating - moderate": "Mässig",
     "Danger rating - very high": "Sehr gross",
     "Danger:": "Stufe :",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Technische Daten, wie Ausrichtung, Gestein oder Aufbau der Route (Kante, Rinne ...)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Technische Daten, wie Ausrichtung, Gestein, Wegpunkte oder Aufbau der Route (Kante, Rinne ...)",
     "Delete": {
       "yeti": "Löschen"
     },
@@ -1160,6 +1160,7 @@
       "quality_types": "leer"
     },
     "empty comment": "leerer Kommentar",
+    "ending waypoints": "ankunftsorte",
     "en": {
       "langs": "englisch"
     },
@@ -1447,6 +1448,7 @@
       "book_types": "Zeitschrift"
     },
     "main_waypoint_id": "ID des Hauptwegpunkts",
+    "main_waypoint": "Hauptwegpunkts",
     "male": {
       "genders": "männlich"
     },
@@ -1907,6 +1909,7 @@
     "stories": {
       "article_categories": "Geschichten"
     },
+    "starting waypoints": "startpunkte",
     "strava": "Strava",
     "strong text": "fetter Text",
     "summary": "Überblick",

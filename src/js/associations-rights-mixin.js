@@ -94,6 +94,10 @@ export default {
         return child.author.user_id === this.$user.id;
       }
 
+      if (child.type === 'w' && parent.type === 'r') {
+        return true;
+      }
+
       return false;
     },
   },

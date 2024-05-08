@@ -191,7 +191,7 @@
     "Danger rating - low": "Veszélyességi besorolás - alacsony",
     "Danger rating - moderate": "Veszélyességi besorolás - mérsékelt",
     "Danger rating - very high": "Veszélyességi besorolás - nagyon magas",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Adatok, mint például orientáció, szikla típus, út típus (pl. oda-vissza, vagy körtúra) és út körülmények (pl. gerinc vagy vízmosás).",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Adatok, mint például orientáció, szikla típus, út típus (pl. oda-vissza, vagy körtúra), útpont és út körülmények (pl. gerinc vagy vízmosás).",
     "Delete": {
       "yeti": "Törlés"
     },
@@ -900,7 +900,11 @@
       "quality_types": "üres"
     },
     "empty comment": "üres megjegyzés",
+    "ending waypoints": "érkezési pontok",
     "engagement_rating": "elkötelezettség_besorolás",
+    "en": {
+      "langs": "angol"
+    },
     "environment": {
       "book_types": "környezet"
     },
@@ -1149,6 +1153,7 @@
       "book_types": "folyóirat"
     },
     "main_waypoint_id": "fő_útvonalpont_azonosító",
+    "main_waypoint": "fő útvonalpont",
     "male": {
       "genders": "férfi"
     },
@@ -1582,6 +1587,7 @@
     "stories": {
       "article_categories": "történetek"
     },
+    "starting waypoints": "indulási pontok",
     "strava": "Strava",
     "strong text": "hangsúlyos szöveg",
     "summary": "összefoglaló",

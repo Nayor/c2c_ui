@@ -18,17 +18,15 @@
 
   <input-orientation v-else-if="field.name == 'orientations'" v-show="visible" v-model="document.orientations" />
 
-  <div v-else-if="field.name == 'main_waypoint_id'" class="control select" :class="{ 'is-danger': hasError }">
-    <select v-model="document.main_waypoint_id">
-      <option :value="null" />
-      <option
-        v-for="waypoint of document.associations.waypoints"
-        :key="waypoint.document_id"
-        :value="waypoint.document_id"
-      >
-        {{ $documentUtils.getDocumentTitle(waypoint) }}
-      </option>
-    </select>
+  <div v-else-if="field.name == 'main_waypoint'">
+    <input-document
+      v-model="object[field.name]"
+      :document-type="field.documentType"
+      clear-input-on-toggle
+      :has-error="hasError"
+      :multiple="false"
+      @add="onAdd"
+    />
   </div>
 
   <input-conditions-levels v-else-if="field.name == 'conditions_levels'" v-model="object[field.name]" />
@@ -46,7 +44,8 @@
     multiple
     clear-input-on-toggle
     :has-error="hasError"
-    @add="$documentUtils.propagateProperties(document, arguments[0])"
+    @add="onAdd"
+    :options-filter="optionsFilter"
     v-model="object[field.name]"
   />
 
@@ -115,7 +114,9 @@ import InputConditionsLevels from './InputConditionsLevels';
 import { requireDocumentProperty, requireFieldProperty } from '@/js/properties-mixins';
 
 export default {
-  components: { InputConditionsLevels },
+  components: {
+    InputConditionsLevels,
+  },
 
   mixins: [requireFieldProperty, requireDocumentProperty],
 
@@ -147,6 +148,10 @@ export default {
     divisor: {
       type: Number,
       default: undefined,
+    },
+    optionsFilter: {
+      type: Function,
+      default: (doc) => doc,
     },
   },
 
@@ -189,6 +194,13 @@ export default {
     },
     hasError() {
       return this.field.error !== null;
+    },
+  },
+
+  methods: {
+    onAdd(child) {
+      this.$documentUtils.propagateProperties(this.document, arguments[0]);
+      this.$emit('add', child);
     },
   },
 };

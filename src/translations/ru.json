@@ -172,7 +172,7 @@
     "Current password": "действующий пароль",
     "Danger level": "Уровень опасности",
     "Danger level from the avalanche bulletin applies to all orientations. The compass rose distinguishes the most critical sectors presenting an increased risk.": "Уровень опасности из лавинного бюллетеня распространяется на любую ориентацию. Роза ветров определяет наиболее важные сектора, представляющие повышенный риск.",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Технические данные, такие как ориентация, тип скал или общая конфигурация маршрута (гребень, кулуар, стена)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Технические данные, такие как ориентация, тип скал, тип маршрута (туда и обратно, петля), точки пересечения или общая конфигурация маршрута (гребень, кулуар, стена)",
     "Delete": {
       "yeti": "Удалить"
     },
@@ -697,6 +697,7 @@
       "quality_types": "пустой"
     },
     "empty comment": "пустой комментарий",
+    "ending waypoints": "пункты прибытия",
     "en": {
       "langs": "английский"
     },
@@ -851,6 +852,7 @@
       "book_types": "Журнал"
     },
     "main_waypoint_id": "Id главной путевой точки",
+    "main_waypoint": "главной путевой точки",
     "map": "карта",
     "maps": "карты",
     "maps_info": "карты",
@@ -1079,6 +1081,7 @@
     "stories": {
       "article_categories": "рассказы"
     },
+    "starting waypoints": "пункты отправления",
     "strava": "Strava",
     "suunto": "Suunto",
     "tags": {

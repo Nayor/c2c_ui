@@ -539,6 +539,7 @@
       "route_types": "loop hut"
     },
     "main_waypoint_id": "ID of the main waypoint",
+    "main_waypoint": "Main waypoint",
     "maps_info": "Maps info",
     "maps_references": "Maps references",
     "matress_unstaffed": "Matress if unstaffed",

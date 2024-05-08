@@ -180,7 +180,7 @@
     "Danger rating - very high": "Grado molto forte",
     "Danger:": "Pericolo:",
     "Dashboard": "Pannello interattivo",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Dati tecnici, come l'orientazione, il tipo di roccia o la configurazione dell'itinerario ",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Dati tecnici, come l'orientazione, il tipo di roccia, tipo di itinerario (andata e ritorno, loop), punto di passaggio o la configurazione dell'itinerario ",
     "Delete": {
       "yeti": "Cancellare"
     },
@@ -1055,6 +1055,7 @@
       "quality_types": "vuoto"
     },
     "empty comment": "commento vuoto",
+    "ending waypoints": "punti di arrivo",
     "en": {
       "langs": "inglese"
     },
@@ -1328,6 +1329,7 @@
       "book_types": "rivista"
     },
     "main_waypoint_id": "ID del punto di passaggio principale",
+    "main_waypoint": "unto di passaggio principale",
     "male": {
       "genders": "maschio "
     },
@@ -1775,6 +1777,7 @@
     "stories": {
       "article_categories": "racconti"
     },
+    "starting waypoints": "punti di partenza",
     "strava": "Strava",
     "strong text": "testo in grassetto ",
     "summary": "Riassunto",

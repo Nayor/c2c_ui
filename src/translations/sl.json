@@ -75,7 +75,7 @@
     "Area not covered": "Območje ni pokrito",
     "Area too large": "Območje je preveliko",
     "Articles, waypoints or routes to be linked.": "Poveži članek, točko ali smer",
-    "Articles, waypoints, routes or books to be linked.": "Povezani članki, točke, smeri ali knjige",
+    "Articles, waypoints, routes or books to be linked.": "Povezani članki, točke poti, smeri ali knjige",
     "As the name suggests, this method is intended for beginners. Therefore, the safety margin must be particularly important. No parameter other than the danger level is specified. Orientation is ignored.": "Kot že ime pove, je ta metoda namenjena začetnikom. Zato mora biti varnostna meja zelo velika. Noben drug parameter ni določen razen stopnje nevarnosti plazovnega biltena. Orientacija je prezrta.",
     "Associated outings": "Povezani vzponi",
     "Associated routes": "Povezane smeri",
@@ -190,7 +190,7 @@
     "Danger rating - moderate": "Zmerna nevarnost",
     "Danger rating - very high": "Zelo velika nevarnost",
     "Danger:": "Nevarnost:",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Podatki, kot so orientacija, vrsta kamnine, vrsta itinerarja (povratno, zanka ...) in konfiguracija smeri (npr greben ali žleb).",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Podatki, kot so orientacija, vrsta kamnine, vrsta itinerarja (povratno, zanka ...), točke poti in konfiguracija smeri (npr greben ali žleb).",
     "Delete": {
       "yeti": "Izbrišite"
     },
@@ -1089,6 +1089,7 @@
       "quality_types": "prazno"
     },
     "empty comment": "prazni komentar",
+    "ending waypoints": "točke prihoda",
     "en": {
       "langs": "angleščina"
     },
@@ -1369,6 +1370,7 @@
       "book_types": "revija"
     },
     "main_waypoint_id": "ID glavne točke",
+    "main_waypoint": "glavna točke poti",
     "male": {
       "genders": "moški"
     },
@@ -1826,6 +1828,7 @@
     "stories": {
       "article_categories": "zgodbe"
     },
+    "starting waypoints": "točke odhoda",
     "strava": "Strava",
     "strong text": "krepko besedilo",
     "summary": "Povzetek",

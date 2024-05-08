@@ -217,7 +217,7 @@
     "Danger rating - moderate": "危险等级 - 中等",
     "Danger rating - very high": "危险等级 - 非常高",
     "Danger:": "危险:",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "朝向、岩石类型、路线类型(如原路返回或环线)以及线路地形类型(如山脊或冲沟)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "朝向、岩石类型、路线类型(如原路返回或环线)以及线路地形类型(如山脊或冲沟)",
     "Delete": {
       "yeti": "删除"
     },
@@ -1087,6 +1087,7 @@
       "quality_types": "空白"
     },
     "empty comment": "空白评论",
+    "ending waypoints": "到达点",
     "en": {
       "langs": "English"
     },
@@ -1373,6 +1374,7 @@
       "book_types": "杂志"
     },
     "main_waypoint_id": "主要路点的id",
+    "main_waypoint": "主要路点的",
     "male": {
       "genders": "男士"
     },
@@ -1833,6 +1835,7 @@
     "stories": {
       "article_categories": "故事"
     },
+    "starting waypoints": "起点",
     "strava": "Strava",
     "strong text": "加粗字体",
     "summary": "总结",

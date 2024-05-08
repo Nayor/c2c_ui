@@ -23,7 +23,7 @@
             {{ $gettext(type + 's') | uppercaseFirstLetter }}
           </div>
           <div
-            v-for="document of promise.data[type + 's'].documents"
+            v-for="document of promise.data[type + 's'].documents.filter(optionsFilter)"
             :key="document.document_id"
             @mousedown="toggle(document)"
             class="dropdown-item dropdown-item-option columns is-gapless has-cursor-pointer"
@@ -134,6 +134,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    optionsFilter: {
+      type: Function,
+      default: (doc) => doc,
+    },
   },
 
   data() {
@@ -162,7 +166,9 @@ export default {
     documentTypesWithResults() {
       const result = this.promise.data;
 
-      return this.documentTypes_.filter((type) => result[type + 's'] && result[type + 's'].documents.length !== 0);
+      return this.documentTypes_.filter(
+        (type) => result[type + 's'] && result[type + 's'].documents.filter(this.optionsFilter).length !== 0
+      );
     },
 
     letterTypes() {

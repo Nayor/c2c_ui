@@ -153,7 +153,7 @@
     "Danger rating - low": "Perill feble",
     "Danger rating - moderate": "Perill moderat",
     "Danger rating - very high": "Perill molt fort",
-    "Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).": "Dades tècniques, com l'orientació, el tipus de roca o la configuració general de l'itinerari (aresta, pilar, etc.)",
+    "Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).": "Dades tècniques, com l'orientació, el tipus de roca, punts de pas o la configuració general de l'itinerari (aresta, pilar, etc.)",
     "Delete": {
       "yeti": "Eliminar"
     },
@@ -915,6 +915,7 @@
       "quality_types": "buit"
     },
     "empty comment": "comentari buit",
+    "ending waypoints": "punts d'arribada",
     "en": {
       "langs": "anglès"
     },
@@ -1180,6 +1181,7 @@
       "book_types": "revista"
     },
     "main_waypoint_id": "ID del punt de pas principal",
+    "main_waypoint": "Punt de pas principal",
     "male": {
       "genders": "home"
     },
@@ -1612,6 +1614,7 @@
     "stone_ice_fall": {
       "event_types": "caiguda de pedra/glaç/serac"
     },
+    "starting waypoints": "punts de partida",
     "stories": {
       "article_categories": "narracions"
     },

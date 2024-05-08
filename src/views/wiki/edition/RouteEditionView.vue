@@ -10,13 +10,8 @@
       expanded-on-load
     >
       <div class="columns is-1">
-        <form-field
-          class="is-narrow"
-          :label="$gettext('waypoint')"
-          :document="document"
-          :field="fields.main_waypoint_id"
-        />
-        <form-field :document="document" :field="fields.title" />
+        <form-field class="is-narrow" :document="document" :field="fields.main_waypoint" />
+        <form-field :document="document" :field="fields.title" :prefix="titlePrefix" />
       </div>
       <div class="columns is-multiline">
         <form-field class="is-narrow" :document="document" :field="fields.climbing_outdoor_type" />
@@ -25,7 +20,6 @@
 
       <map-input-row :document="document" geom-detail-editable ref="map" />
 
-      <associations-input-row :document="document" :field="fields.waypoints" />
       <associations-input-row :document="document" :field="fields.routes" />
       <associations-input-row :document="document" :field="fields.articles" />
       <associations-input-row :document="document" :field="fields.books" />
@@ -36,7 +30,7 @@
       :title="$gettext('configuration')"
       :sub-title="
         $gettext(
-          'Data like orientation, rock type, route type (such as return trip or loop) and route configuration type (such as ridge or gully).'
+          'Data like orientation, rock type, route type (such as return trip or loop), waypoints and route configuration type (such as ridge or gully).'
         )
       "
     >
@@ -46,6 +40,29 @@
         <form-field class="is-12" :document="document" :field="fields.configuration" />
         <form-field class="is-12" :document="document" :field="fields.rock_types" />
       </div>
+
+      <associations-input-row
+        :document="document"
+        :field="fields.waypoints"
+        :label="$gettext('starting waypoints')"
+        @add="document.starting_waypoints.push(arguments[0])"
+        :options-filter="filterAccessWaypoints"
+        :cards-filter="filterStartingWaypoints"
+      />
+      <associations-input-row
+        :document="document"
+        :field="fields.waypoints"
+        :cards-filter="filterIntermediateWaypoints"
+      />
+      <associations-input-row
+        v-show="fields.ending_waypoints.isVisibleFor(document)"
+        :document="document"
+        :field="fields.waypoints"
+        :label="$gettext('ending waypoints')"
+        @add="document.ending_waypoints.push(arguments[0])"
+        :options-filter="filterAccessWaypoints"
+        :cards-filter="filterEndingWaypoints"
+      />
     </form-section>
 
     <form-section
@@ -183,16 +200,25 @@ export default {
   computed: {
     descriptionPlaceholder() {
       if (
+        this.document &&
+        this.document.activites &&
         ['mountain_climbing', 'rock_climbing', 'ice_climbing'].find((act) => this.document.activities.includes(act))
       ) {
         return this.$gettext('Describe the route following the structure below');
       }
       return undefined;
     },
+    titlePrefix() {
+      if (!this.document?.main_waypoint) {
+        return '';
+      }
+      return this.$documentUtils.getDocumentTitle(this.document.main_waypoint);
+    },
   },
 
   watch: {
     'document.associations.waypoints': 'onWaypointsAssociation',
+    'document.main_waypoint': 'onMainWaypointSelection',
     'document.geometry.geom': 'onGeometryUpdate',
     'document.geometry.geom_detail': 'onGeometryUpdate',
     'document.climbing_outdoor_type': {
@@ -205,9 +231,16 @@ export default {
 
   methods: {
     afterLoad() {
-      // on creation from a waypoint, set this waypoint as main
-      if (this.mode === 'add' && this.$route.query.w) {
-        this.document.main_waypoint_id = parseInt(this.$route.query.w);
+      // on creation from waypoints, set main waypoint and access waypoints
+      const waypoints = this.document.associations.waypoints;
+      if (this.mode === 'add') {
+        if (this.document.main_waypoint_id === null && waypoints.length !== 0) {
+          this.document.main_waypoint =
+            waypoints.find((waypoint) => waypoint.waypoint_type !== 'access') || waypoints[0];
+        }
+        if (this.document.starting_waypoints.length === 0 && waypoints.length !== 0) {
+          this.document.starting_waypoints = waypoints.filter((waypoint) => waypoint.waypoint_type === 'access');
+        }
       }
     },
 
@@ -231,21 +264,33 @@ export default {
       }
     },
 
-    onWaypointsAssociation() {
-      const waypoints = this.document.associations.waypoints;
-
-      // clean main waypoint if it is missing from associated waypoints
-      if (waypoints.findIndex((doc) => doc.document_id === this.document.main_waypoint_id) === -1) {
+    onMainWaypointSelection() {
+      if (
+        this.document.main_waypoint_id &&
+        this.document.main_waypoint_id === this.document.main_waypoint.document_id
+      ) {
         this.document.main_waypoint_id = null;
-      }
-
-      // on creation mode, if main waypoint is null, and some waypoints are associated, take the first
-      if (this.mode === 'add' && this.document.main_waypoint_id === null && waypoints.length !== 0) {
-        this.document.main_waypoint_id = waypoints[0].document_id;
+        this.document.main_waypoint = null;
+      } else {
+        this.document.main_waypoint_id = this.document.main_waypoint.document_id;
+        this.$documentUtils.addAssociation(this.document, this.document.main_waypoint);
       }
     },
 
+    onWaypointsAssociation() {
+      const waypoints = this.document.associations.waypoints;
+
+      // clear removed waypoints
+      this.document.starting_waypoints = this.document.starting_waypoints.filter((waypoint) =>
+        this.$documentUtils.isInArray(waypoints, waypoint)
+      );
+      this.document.ending_waypoints = this.document.ending_waypoints.filter((waypoint) =>
+        this.$documentUtils.isInArray(waypoints, waypoint)
+      );
+    },
+
     handleRockFreeRating(climbingType) {
+      if (!this.document || !this.document.rock_free_rating) return;
       const documentRating = this.document.rock_free_rating;
       const ratings = this.fields.rock_free_rating.values;
       switch (climbingType) {
@@ -257,6 +302,25 @@ export default {
           this.document.rock_free_rating = documentRating.toLowerCase();
           this.fields.rock_free_rating.values = ratings.map((grade) => grade.toLowerCase());
       }
+    },
+
+    filterAccessWaypoints(doc) {
+      return doc.waypoint_type && doc.waypoint_type === 'access';
+    },
+
+    filterStartingWaypoints(waypoint) {
+      return this.$documentUtils.isInArray(this.document.starting_waypoints, waypoint);
+    },
+
+    filterIntermediateWaypoints(waypoint) {
+      return (
+        !this.$documentUtils.isInArray(this.document.starting_waypoints, waypoint) &&
+        !this.$documentUtils.isInArray(this.document.ending_waypoints, waypoint)
+      );
+    },
+
+    filterEndingWaypoints(waypoint) {
+      return this.$documentUtils.isInArray(this.document.ending_waypoints, waypoint);
     },
   },
 };

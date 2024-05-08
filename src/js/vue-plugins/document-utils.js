@@ -156,7 +156,7 @@ export default function install(Vue) {
       },
 
       isInArray(array, document) {
-        return array.filter((item) => item.document_id === document.document_id).length !== 0;
+        return array.some((item) => item.document_id === document.document_id);
       },
 
       addAssociation(document, child) {
